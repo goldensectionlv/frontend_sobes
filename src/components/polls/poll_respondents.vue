@@ -371,6 +371,9 @@ export default {
   display: flex;
   width: 70%
 }
+.btn-type-action {
+  min-height: 45px;
+}
 
 @media (max-width: 750px) {
   .add_poll_header {
