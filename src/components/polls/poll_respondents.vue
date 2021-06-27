@@ -1,5 +1,5 @@
 <template>
-  <div id="poll" style="width: 100%; max-width: 1350px">
+  <div id="poll" style="width: 100%; max-width: 1250px">
 
     <h4 class="add_poll_header">Добавить опрос</h4>
 
@@ -81,12 +81,18 @@
               <div class="respondent-condition__options__buttons">
                 <div class="respondent-condition__options__buttons__container">
                   <v-btn @click="add_ages(index)"
-                         outlined small color="#86A909" class="btn-type-action">
+                         outlined
+                         small
+                         color="#86A909"
+                         class="btn-type-action">
                     <v-icon class="mr-1">mdi-plus</v-icon>
                     добавить диапазон
                   </v-btn>
                   <v-btn @click="delete_condition(index)"
-                         outlined small color="red" class="btn-type-action">
+                         outlined
+                         small
+                         color="red"
+                         class="btn-type-action">
                     <v-icon class="mr-1">mdi-trash-can-outline</v-icon>
                     Удалить условие
                   </v-btn>
@@ -136,16 +142,18 @@
               <div class="respondent-condition__options__buttons">
 
                 <div class="respondent-condition__options__buttons__container">
-                  <v-btn small @click="add_card_options(index)"
+                  <v-btn @click="add_card_options(index)"
                          outlined
+                         small
                          class="btn-type-action"
                          color="#86A909">
                     <v-icon class="mr-1">mdi-plus</v-icon>
                     добавить тип
                   </v-btn>
 
-                  <v-btn small @click="delete_condition(index)"
+                  <v-btn @click="delete_condition(index)"
                          outlined
+                         small
                          class="btn-type-action"
                          color="red">
                     <v-icon class="mr-1">mdi-trash-can-outline</v-icon>
