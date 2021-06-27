@@ -1,5 +1,10 @@
 # test-app-frontend
 
+## https://frontend-sobesedivanie.herokuapp.com/polls/create_poll
+
+
+![screen](https://github.com/goldensectionlv/frontend_sobes_updated/raw/master/screen.png)
+
 ## Project setup
 ```
 npm install
