@@ -25,6 +25,9 @@
 - исходный код приложения в github
 - инструкция по разворачиванию приложения
 
+
+## Решение
+
 ![screen](https://github.com/goldensectionlv/frontend_sobes_updated/raw/master/screen.png)
 
 ## Project setup
