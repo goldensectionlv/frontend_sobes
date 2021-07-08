@@ -3,33 +3,33 @@
 
     <div class="poll_bookmarks">
       <span class="poll_bookmark"
-            :class="params_active ? 'bookmark_active' : ''"
-            @click="switch_to_params"
+            :class="poll_tabs.params.active ? 'bookmark_active' : ''"
+            @click="switch_tab(poll_tabs.params.name)"
       >Параметры</span>
       <span class="poll_bookmark"
-            :class="questions_active ? 'bookmark_active' : ''"
-            @click="switch_to_questions"
+            :class="poll_tabs.questions.active ? 'bookmark_active' : ''"
+            @click="switch_tab(poll_tabs.questions.name)"
       >Вопросы</span>
       <span class="poll_bookmark"
-            :class="logic_active ? 'bookmark_active' : ''"
-            @click="switch_to_logic"
+            :class="poll_tabs.logic.active ? 'bookmark_active' : ''"
+            @click="switch_tab(poll_tabs.logic.name)"
       >Логика</span>
       <span class="poll_bookmark"
-            :class="conditions_active ? 'bookmark_active' : ''"
-            @click="switch_to_conditions"
+            :class="poll_tabs.conditions.active ? 'bookmark_active' : ''"
+            @click="switch_tab(poll_tabs.conditions.name)"
       >Условия</span>
       <span class="poll_bookmark"
-            :class="respondents_active ? 'bookmark_active' : ''"
-            @click="switch_to_respondents"
+            :class="poll_tabs.respondents.active ? 'bookmark_active' : ''"
+            @click="switch_tab(poll_tabs.respondents.name)"
       >Респонденты</span>
     </div>
 
     <div class="poll_body d-flex justify-center" style="width: 100%">
-      <poll_conditions v-if="conditions_active"/>
-      <poll_logic v-if="logic_active"/>
-      <poll_params v-if="params_active"/>
-      <poll_questions v-if="questions_active"/>
-      <poll_respondents v-if="respondents_active"/>
+      <poll_conditions v-if="poll_tabs.conditions.active"/>
+      <poll_logic v-if="poll_tabs.logic.active"/>
+      <poll_params v-if="poll_tabs.params.active"/>
+      <poll_questions v-if="poll_tabs.questions.active"/>
+      <poll_respondents v-if="poll_tabs.respondents.active"/>
     </div>
 
 
@@ -48,20 +48,13 @@ export default {
   components: {poll_respondents, poll_conditions, poll_logic, poll_params, poll_questions},
   computed: {
     ...mapGetters([
-      'params_active',
-      'questions_active',
-      'logic_active',
-      'conditions_active',
-      'respondents_active'
+      'poll_tabs'
     ])
   },
   methods: {
     ...mapActions([
-      'switch_to_params',
-      'switch_to_questions',
-      'switch_to_logic',
-      'switch_to_conditions',
-      'switch_to_respondents'])
+      'switch_tab'
+    ])
   }
 }
 </script>
@@ -72,14 +65,12 @@ export default {
   min-height: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 30px 1fr;
-  //justify-items: center;
 }
 
 .poll_bookmarks {
   display: grid;
   align-items: start;
   grid-template-columns: repeat(5, 1fr);
-//padding: 0 30px 0 30px; margin: 0 30px 0 30px; border-bottom: 1px solid #C1E837;
 
 }
 
@@ -106,7 +97,6 @@ export default {
   justify-content: center;
   width: 100%;
   padding: 30px 30px 0 30px;
-  //background-color: red;
 }
 
 @media (max-width: 750px) {

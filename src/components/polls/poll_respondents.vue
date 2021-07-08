@@ -230,7 +230,6 @@ export default {
   },
   methods: {
     ...mapActions([
-      'switch_to_respondents',
       'user_condition_pusher',
       'delete_condition',
       'delete_option',
