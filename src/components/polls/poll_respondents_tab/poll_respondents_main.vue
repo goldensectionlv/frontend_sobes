@@ -97,6 +97,7 @@
             :index="index"
 
         />
+        <!--        разделитель-->
         <divider
             :length="user_conditions.length"
             :index="index"
@@ -104,6 +105,7 @@
         />
       </div>
     </div>
+    <!--    добавить условие-->
     <add_condition
         :action="add_condition"
         style="margin-top: 30px"
@@ -122,7 +124,7 @@
     </div>
 
     <div style="padding: 30px" class="grey--text">
-      {{user_conditions}}
+      {{ user_conditions }}
     </div>
 
 
