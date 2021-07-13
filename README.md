@@ -26,10 +26,6 @@
 - инструкция по разворачиванию приложения
 
 
-## Решение
-
-![screen](https://github.com/goldensectionlv/frontend_sobes/raw/master/screen.png)
-
 ## Project setup
 ```
 npm install
