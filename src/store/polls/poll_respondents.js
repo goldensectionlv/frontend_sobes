@@ -1,78 +1,50 @@
 export default {
     state: {
-        conditions: [
-            {
-                name: 'Возраст респондента',
-                options: []
-            },
-            {
-                name: 'Карта лояльности',
-                statuses: ['Активна', 'Неактивна'],
-                types: [
-                    {
-                        name: 'Gold',
-                    },
-                    {
-                        name: 'Bronze',
-                    }
-                ]
-            }
-        ],
-        card_types: ['Bronze', 'Gold'],
-        poll_respondents: []
+        user_conditions: [],
+        conditions: ['Возраст респондента', 'Тип карты лояльности', 'Статус карты лояльности'],
+        loyalty_card_types: ['Gold', 'Bronze'],
+        card_status: ['Активна', 'Неактивна'],
     },
     mutations: {
-        user_condition_pusher(state) {
-            state.poll_respondents.push({
-                condition: '',
-                options: []
-            })
+        add_condition(state) {
+            state.user_conditions.push({condition: '', options: []})
         },
         delete_condition(state, index) {
-            state.poll_respondents.splice(index, 1)
+            state.user_conditions.splice(index, 1)
         },
-        delete_option(state, condition_index, option_index) {
-            state.poll_respondents[condition_index].options.splice(option_index, 1)
+        add_option(state, index) {
+            state.user_conditions[index].options.push('')
         },
-        add_ages(state, index) {
-            state.poll_respondents[index].options.push({age1: 0, age2: 0})
-        },
-        add_card_options(state, index) {
-            state.poll_respondents[index].options.push({type: '', status: ''})
-        },
-        clear_condition_options(state, index) {
-            state.poll_respondents[index].options = []
+        add_option_range(state, index) {
+            state.user_conditions[index].options.push({from: '', to: ''})
         }
     },
     actions: {
-        user_condition_pusher(ctx) {
-            ctx.commit('user_condition_pusher')
+        add_condition(ctx) {
+            ctx.commit('add_condition')
         },
         delete_condition(ctx, index) {
             ctx.commit('delete_condition', index)
         },
-        delete_option(ctx, condition_index, option_index) {
-            ctx.commit('delete_option', condition_index, option_index)
+        add_option(ctx, index) {
+            ctx.commit('add_option', index)
         },
-        add_ages(ctx, index) {
-            ctx.commit('add_ages', index)
-        },
-        add_card_options(ctx, index) {
-            ctx.commit('add_card_options', index)
-        },
-        clear_condition_options(ctx, index) {
-            ctx.commit('clear_condition_options', index)
+        add_option_range(ctx, index) {
+            ctx.commit('add_option_range', index)
         }
     },
     getters: {
+        user_conditions(state) {
+            return state.user_conditions
+        },
         conditions(state) {
             return state.conditions
         },
-        card_types(state) {
-            return state.card_types
+        loyalty_card_types(state) {
+            return state.loyalty_card_types
         },
-        poll_respondents(state) {
-            return state.poll_respondents
+        card_status(state) {
+            return state.card_status
         }
     }
 }

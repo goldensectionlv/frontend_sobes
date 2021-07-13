@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import sidebar_content from "@/components/sidebar_content";
+import sidebar_content from "@/components/sidebar_content/sidebar_content";
 import breadcrumbs from "@/components/breadcrumbs";
 
 export default {

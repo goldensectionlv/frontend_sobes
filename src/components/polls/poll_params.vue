@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%; margin-top: 30px">
+  <div>
     <h1>Параметры</h1>
   </div>
 </template>
