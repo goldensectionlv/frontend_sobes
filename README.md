@@ -16,7 +16,7 @@
 
 Макет:
 
-![screen](https://github.com/goldensectionlv/frontend_sobes_updated/raw/master/screen1.png)
+![screen](https://github.com/goldensectionlv/frontend_sobes/raw/master/screen1.png)
 
 Использовать следующие технологии: Nuxt, Vue.js. Использовать css-фреймворки нежелательно.
 
@@ -28,7 +28,7 @@
 
 ## Решение
 
-![screen](https://github.com/goldensectionlv/frontend_sobes_updated/raw/master/screen.png)
+![screen](https://github.com/goldensectionlv/frontend_sobes/raw/master/screen.png)
 
 ## Project setup
 ```
